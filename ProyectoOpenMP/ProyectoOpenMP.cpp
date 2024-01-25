@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <omp.h>
+#include <time.h>
 
 #define N 1000      // Cantidad de elementos que manejará nuestro arreglo
 #define chunk 100   // Tamaño de los segmentos para cada arreglo
@@ -13,13 +14,14 @@ void imprimeArreglo(float *d);
 int main()
 {
     std::cout << "Sumando arrelgos en Paralelo!\n";
+    srand(time(NULL));
     float a[N], b[N], c[N];
     int i;
 
     // Inicialización de los dos arrelos para sumar
     for (i = 0; i < N; i++) {
-        a[i] = i * 10;
-        b[i] = (i + 3) * 3.7;
+        a[i] = rand();
+        b[i] = 1 + rand() % 1000;
     }
 
     int pedazos = chunk;
