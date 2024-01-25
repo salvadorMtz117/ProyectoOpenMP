@@ -4,9 +4,9 @@
 #include <iostream>
 #include <omp.h>
 
-#define N 1000
-#define chunk 100
-#define mostrar 10
+#define N 1000      // Cantidad de elementos que manejará nuestro arreglo
+#define chunk 100   // Tamaño de los segmentos para cada arreglo
+#define mostrar 10  // Establece la cantidad de datos para mostrar
 
 void imprimeArreglo(float *d);
 
@@ -16,6 +16,7 @@ int main()
     float a[N], b[N], c[N];
     int i;
 
+    // Inicialización de los dos arrelos para sumar
     for (i = 0; i < N; i++) {
         a[i] = i * 10;
         b[i] = (i + 3) * 3.7;
@@ -38,6 +39,10 @@ int main()
     imprimeArreglo(c);
 }
 
+/// <summary>
+/// Función para impresión de arreglos
+/// </summary>
+/// <param name="Arreglo para imprimir"></param>
 void imprimeArreglo(float* d) {
     for (int x = 0; x < mostrar; x++)
         std::cout << d[x] << " - ";
